@@ -66,8 +66,15 @@ class Basketball(spyral.Scene):
 	spyral.event.register("system.quit", spyral.director.pop)
 	spyral.event.register("input.keyboard.down.q", spyral.director.pop)
 	spyral.event.register("input.mouse.down.left", self.handle_clicked) 
-   	question_array = ["There are __ many people in the mall.", "I wish I had __ dogs."]
-	choices_array =["1. to 2. two 3. too","1. to 2. two 3. too"]
+   	question_array = ["There are __ many people in the mall.", "I wish I had __ dogs.", "He is ___ young.", "She had ___ teaspoons of sugar in her tea.",
+	 "I like ___ be in the mountains.", "Mary saw a movie yesterday. I saw one ____.", "His house is near ___ rivers.", "Who are you going to give the present ___?",
+	  "Can I have one of those ___?", "We live close ___ here.",
+	
+	"", "", "", "", "", "", "", "", "", "",]
+	choices_array =["1. to 2. two 3. too","1. to 2. two 3. too", "1. to 2. two 3. too", "1. to 2. two 3. too", "1. to 2. two 3. too",
+	"1. to 2. two 3. too", "1. to 2. two 3. too", "1. to 2. two 3. too", "1. to 2. two 3. too", "1. to 2. two 3. too",
+	
+	"1. 2. 3.", "1. 2. 3.", "1. 2. 3.", "1. 2. 3.", "1. 2. 3.", "1. 2. 3.", "1. 2. 3.", "1. 2. 3.", "1. 2. 3.", "1. 2. 3."]
 	global x_array
 	x_array = [800]
 	font = spyral.Font("/usr/share/fonts/truetype/freefont/FreeMono.ttf",36,(255,255,255))
