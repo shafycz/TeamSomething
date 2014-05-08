@@ -66,8 +66,18 @@ class Basketball(spyral.Scene):
 	spyral.event.register("system.quit", spyral.director.pop)
 	spyral.event.register("input.keyboard.down.q", spyral.director.pop)
 	spyral.event.register("input.mouse.down.left", self.handle_clicked) 
-   	question_array = ["There are __ many people in the mall.", "I wish I had __ dogs."]
-	choices_array =["1. to 2. two 3. too","1. to 2. two 3. too"]
+   	question_array = ["There are __ many people in the mall.", "I wish I had __ dogs.", "He is ___ young.", "She had ___ teaspoons of sugar in her tea.",
+	 "I like ___ be in the mountains.", "Mary saw a movie yesterday. I saw one ____.", "His house is near ___ rivers.", "Who are you going to give the present ___?",
+	  "Can I have one of those ___?", "We live close ___ here.",
+	
+	"According to legend, ___ is treasure buried on the island.", "John and Jake said ___ coming for dinner.", "___ is a mouse in my closet.",
+	"I wonder if ___ still planning on going to the park today.", "I can't wait to see the look on ___ faces.", "It is still ___ decision.",
+	"I think Deb left her glasses over ___.", "I don't know what ___ doing to cause all that noise.", "Can you check over ___?", "I wish ___ stay in town was longer."]
+	choices_array =["1. to 2. two 3. too","1. to 2. two 3. too", "1. to 2. two 3. too", "1. to 2. two 3. too", "1. to 2. two 3. too",
+	"1. to 2. two 3. too", "1. to 2. two 3. too", "1. to 2. two 3. too", "1. to 2. two 3. too", "1. to 2. two 3. too",
+	
+	"1. their 2. there 3. they're", "1. their 2. there 3. they're", "1. their 2. there 3. they're", "1. their 2. there 3. they're", "1. their 2. there 3. they're",
+	 "1. their 2. there 3. they're", "1. their 2. there 3. they're", "1. their 2. there 3. they're", "1. their 2. there 3. they're", "1. their 2. there 3. they're"]
 	global x_array
 	x_array = [800]
 	font = spyral.Font("/usr/share/fonts/truetype/freefont/FreeMono.ttf",36,(255,255,255))
