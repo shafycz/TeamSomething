@@ -54,7 +54,7 @@ class Question(spyral.Scene):
         elif game.Color==5:
         	self.background = spyral.Image(filename= "game/colors/redb3.png")
         
-		class selectDifficultyForm(spyral.Form) 
+	class selectDifficultyForm(spyral.Form) 
 		easy = spyral.widgets.Button("easy", "Easy")
 		medium = spyral.widgets.Button("medium", "Medium")
 		hard = spyral.widgets.Button("Hard", "Hard")
@@ -196,6 +196,7 @@ class Question(spyral.Scene):
 	#message7 = sont.render(number_array[0]);
 	self.diff_form = selectDifficultyForm(self)
 	self.diff_form.focus()
+
 	questionMessage(self,message4,(0),10)
 	questionMessage(self,message5,(0),575)
 	questionMessage(self,message6,(0),625)	
