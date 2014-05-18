@@ -79,10 +79,92 @@ class Basketball(spyral.Scene):
 	spyral.event.register("system.quit", spyral.director.pop)
 	spyral.event.register("input.keyboard.down.q", spyral.director.pop)
 	spyral.event.register("input.mouse.down.left", self.handle_clicked) 
-   	question_array = ["There are __ many people in the mall.", "I wish I had __ dogs."]
-	choices_array =["1. to 2. two 3. too","1. to 2. two 3. too"]
+   	question_array = ["There are __ many people in the mall.", "I wish I had __ dogs.", "He is ___ young.", "She had ___ teaspoons of sugar in her tea.",
+	"I like ___ be in the mountains.", "Mary saw a movie yesterday. I saw one ____.", "His house is near ___ rivers.", "Who are you going to give the present ___?",
+	"Can I have one of those ___?", "We live close ___ here.",
+	#2, 1, 2, 1, 0, 2, 1, 0, 2, 0
+	
+	"According to legend, ___ is treasure buried on the island.", "John and Jake said ___ coming for dinner.", "___ is a mouse in my closet.",
+	"I wonder if ___ still planning on going to the park today.", "I can't wait to see the look on ___ faces.", "It is still ___ decision.",
+	"I think Deb left her glasses over ___.", "I don't know what ___ doing to cause all that noise.", "Can you check over ___?", "I wish ___ stay in town was longer.",  
+	#1, 2, 1, 2, 0, 0, 1, 2, 1, 0
+	
+	"He ___ a package to her in the mail.", "There was an odd ___ that the dog gave off.", "I will not pay you a single ___ for this food.", 
+	"Can I borrow one ___? I need it for lunch.", "James was ___ to the nurses office because he had a runny nose.", "The teacher knew how the parent would respond even before she ___ the email.", 
+	"Each animal has a different ___, which makes other animals able to detect them.", "A ___ is worth less than a nickel.", "Roses have a wonderful ___.", "Why would he ever have ___ that text to her?",
+	#1, 2, 0, 0, 1, 1, 2, 0, 2, 1 
+	
+	"The ___ to the grocery store was too long to walk.", "He hasn't ___ a the ferris wheel in a few years.", "You're on a narrow ___ with a sheer cliff on your side.", "People ___ horses, but they also drove pick-up trucks.", 
+	"That afternoon, we ___ leisurely up the stream.", "I ___ my boat to the dock.", "At some point in the trip he got on a bus and ___ home.", 
+	"Did you know the government collects money in many ways, such as using a toll ___.", "Jim was tired, so he ___ his canoe back to camp.", "Many people ___ on trains as a main form of transportation.",
+	#0, 2, 0, 2, 1, 1, 2, 0, 1, 2
+	
+	"To build muscle, bodybuilders use ___ protein.", "In the cheese making process, milk is separated out into solids, also called curds, and liquid, also called ___.", 
+	"I think I have gained a few pounds, maybe I should ___ myself.", "There is no ___ I'm going into that haunted house.", "Do you know the ___ home from school?", 
+	"The cashier had to ___ the fruit to be able to know it's price.", "You should ___ the pros and cons before making decisions.", 
+	"Some whales ___ as much as 150 tons.", "Get out of my ___, I need to go to the emergency room!", "Taking the elevator to the second floor is a much easier ___ than taking the stairs.",
+	#2, 2, 1, 0, 0, 1, 1, 1, 0, 0
+	
+	"A wound will ___ after a few days if you wash and treat it correctly.", "My ___ got scraped when I was skateboarding.", 
+	"Having a shoe cushion for a bruised ___ is helpful.", "We can only hope that ___ come to the birthday party on time.", "Do you think ___ ask for your number tonight?", 
+	"Putting salt on a mouth sore will help your mouth ___ itself.", "A broken bone will take a lot longer to ___ than a cut.", "___ pain can usually be explained by shoe choice.",
+	"Don't worry, ___ let you know when your mom gets home.", "If ___ pick you up, I can drop you off.",
+	#0, 2, 2, 1, 1, 0, 0, 2, 1, 1
+	
+	"The weather channel predicted ___ all weekend.", "___ forests now cover less than 6% of Earth's land surface.", "Did you know that acid ___ can contaminate lakes?", 
+	"The king had ___ over the entire continent.", "Keeping a tight ___ on your employees is a good work strategy.", "If you walk a horse on a loose ___ it will help them relax.", 
+	"Loyalty will always ___ supreme.", "The queen had a ___ of terror over the tribe, because she was cruel.", "Heavy ___ is very dangerous since it can cause flooding.", "Why don't you let me take the ___ now?",
+	#0, 0, 0, 1, 2, 2, 1, 1, 0, 2
+	
+	"The poor old man was losing his sense of ___.", "I'm going to the construction ___ later today.", "A sunset is a great ___ to see.", 
+	"I have to make sure to ___ my sources when writing a paper.", "The work ___ is very dirty now because of lazy workers not cleaning up.", 
+	"On his resume, Anthony would like to ___ his father as his biggest influence.", "___ seeing in other countries is very exciting.", 
+	"I was overwhelmed at the ___ of my long lost cat coming home.", "A web ___ is something you visit on the Internet.", "A stadium is a ___ usually used for sporting events and concerts.",
+	#0, 1, 0, 2, 1, 2, 0, 0, 1, 1
+	
+	"Spy ___ is something you should try to avoid on your computer.", "Do you know ___ I put my glasses?", "I can't believe Jenny is going to ___ that to the prom!", 
+	"Let us take some time to inspect your ___ that you crafted.", "Could you try to find ___ the computer's power cord is?", "Take me to the clothing store ___ I can shop.", 
+	"The florist only had one item left, and he waited all day to sell that lone ___.", "I wish I knew ___ the gas station was.", "Could you hurry up and choose what you're going to ___ please?",
+	 "I never like to ___ sandals."]
+	#0, 2, 1, 0, 2, 2, 0, 2, 1, 1
+	
+	choices_array =["1. to 2. two 3. too","1. to 2. two 3. too", "1. to 2. two 3. too", "1. to 2. two 3. too", "1. to 2. two 3. too",
+	"1. to 2. two 3. too", "1. to 2. two 3. too", "1. to 2. two 3. too", "1. to 2. two 3. too", "1. to 2. two 3. too",
+	
+	"1. their 2. there 3. they're", "1. their 2. there 3. they're", "1. their 2. there 3. they're", "1. their 2. there 3. they're", "1. their 2. there 3. they're",
+	"1. their 2. there 3. they're", "1. their 2. there 3. they're", "1. their 2. there 3. they're", "1. their 2. there 3. they're", "1. their 2. there 3. they're",
+	
+	"1. cent 2. sent 3. scent", "1. cent 2. sent 3. scent", "1. cent 2. sent 3. scent", "1. cent 2. sent 3. scent", "1. cent 2. sent 3. scent", "1. cent 2. sent 3. scent",
+	"1. cent 2. sent 3. scent", "1. cent 2. sent 3. scent", "1. cent 2. sent 3. scent", "1. cent 2. sent 3. scent",
+	 
+	"1. road 2. rowed 3. rode", "1. road 2. rowed 3. rode", "1. road 2. rowed 3. rode", "1. road 2. rowed 3. rode", "1. road 2. rowed 3. rode", "1. road 2. rowed 3. rode", 
+	"1. road 2. rowed 3. rode", "1. road 2. rowed 3. rode", "1. road 2. rowed 3. rode", "1. road 2. rowed 3. rode",
+	
+	"1. way 2. weigh 3. whey", "1. way 2. weigh 3. whey", "1. way 2. weigh 3. whey", "1. way 2. weigh 3. whey", "1. way 2. weigh 3. whey", 
+	"1. way 2. weigh 3. whey", "1. way 2. weigh 3. whey", "1. way 2. weigh 3. whey", "1. way 2. weigh 3. whey", "1. way 2. weigh 3. whey",
+	
+	"1. heal 2. he'll 3. heel", "1. heal 2. he'll 3. heel", "1. heal 2. he'll 3. heel", "1. heal 2. he'll 3. heel", "1. heal 2. he'll 3. heel", 
+	"1. heal 2. he'll 3. heel", "1. heal 2. he'll 3. heel", "1. heal 2. he'll 3. heel", "1. heal 2. he'll 3. heel", "1. heal 2. he'll 3. heel",
+	
+	"1. rain 2. reign 3. rein", "1. rain 2. reign 3. rein", "1. rain 2. reign 3. rein", "1. rain 2. reign 3. rein", "1. rain 2. reign 3. rein", 
+	"1. rain 2. reign 3. rein", "1. rain 2. reign 3. rein", "1. rain 2. reign 3. rein", "1. rain 2. reign 3. rein", "1. rain 2. reign 3. rein",
+	
+	"1. sight 2. site 3. cite", "1. sight 2. site 3. cite", "1. sight 2. site 3. cite", "1. sight 2. site 3. cite", "1. sight 2. site 3. cite", 
+	"1. sight 2. site 3. cite", "1. sight 2. site 3. cite", "1. sight 2. site 3. cite", "1. sight 2. site 3. cite", "1. sight 2. site 3. cite",
+	
+	"1. ware 2. wear 3. where", "1. ware 2. wear 3. where", "1. ware 2. wear 3. where", "1. ware 2. wear 3. where", "1. ware 2. wear 3. where", 
+	"1. ware 2. wear 3. where", "1. ware 2. wear 3. where", "1. ware 2. wear 3. where", "1. ware 2. wear 3. where", "1. ware 2. wear 3. where"]
 	global x_array
-	x_array = [800]
+	x_array = [2, 1, 2, 1, 0, 2, 1, 0, 2, 0, 
+	1, 2, 1, 2, 0, 0, 1, 2, 1, 0, 
+	1, 2, 0, 0, 1, 1, 2, 0, 2, 1,
+	0, 2, 0, 2, 1, 1, 2, 0, 1, 2,
+	2, 2, 1, 0, 0, 1, 1, 1, 0, 0,
+	0, 2, 2, 1, 1, 0, 0, 2, 1, 1,
+	0, 0, 0, 1, 2, 2, 1, 1, 0, 2,
+	0, 1, 0, 2, 1, 2, 0, 0, 1, 1,
+	0, 2, 1, 0, 2, 2, 0, 2, 1, 1]
+
 	font = spyral.Font("/usr/share/fonts/truetype/freefont/FreeMono.ttf",36,(255,255,255))
 	message = font.render(question_array[0]);
 	message2 =font.render(choices_array[0]);
