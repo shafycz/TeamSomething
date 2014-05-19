@@ -5,7 +5,6 @@ import math
 #import wallbreaker
 import basketball2
 import game
-import question
 
 
 WIDTH = 1200
@@ -25,65 +24,17 @@ DEF_FONT = "libraries/spyral/resources/fonts/DejaVuSans.ttf"
 class Check(spyral.Sprite):
   def __init__(self, scene, x,y):
    super(Check,self).__init__(scene)
-   self.image = spyral.Image(filename="game/colors/check.png")
+   self.image = spyral.Image(filename="game/check.png")
    self.anchor = 'center'
    self.x = x
    self.y = y
 class X(spyral.Sprite):
   def __init__(self, scene, x,y):
    super(X,self).__init__(scene)
-   self.image = spyral.Image(filename="game/colors/x.png")
+   self.image = spyral.Image(filename="game/x.png")
    self.anchor = 'center'
    self.x = x
    self.y = y
-class ball(spyral.Sprite):
-	def __init__(self,scene,x,y):
-		spyral.Sprite.__init__(self,scene)
-		self.image = spyral.Image(filename= "game/colors/basketballPic2.png")
-		self.x = x
-		self.y = y
-class One(spyral.Sprite):
-	def __init__(self,scene,x,y):
-		spyral.Sprite.__init__(self,scene)
-		self.image = spyral.Image(filename= "game/colors/basketballPic3.png")
-		self.x = x
-		self.y = y
-class hat(spyral.Sprite):
-	def __init__(self,scene,x,y):
-		spyral.Sprite.__init__(self,scene)
-		self.image = spyral.Image(filename= "game/colors/tophat.png")
-		self.x = x
-		self.y = y
-class sheep(spyral.Sprite):
-	def __init__(self,scene,x,y):
-		spyral.Sprite.__init__(self,scene)
-		self.image = spyral.Image(filename= "game/colors/sheep_front2.png")
-		self.x = x
-		self.y = y
-class phone(spyral.Sprite):
-	def __init__(self,scene,x,y):
-		spyral.Sprite.__init__(self,scene)
-		self.image = spyral.Image(filename= "game/colors/phone.png")
-		self.x = x
-		self.y = y
-class ball8(spyral.Sprite):
-	def __init__(self,scene,x,y):
-		spyral.Sprite.__init__(self,scene)
-		self.image = spyral.Image(filename= "game/colors/ball8.png")
-		self.x = x
-		self.y = y
-class burger(spyral.Sprite):
-	def __init__(self,scene,x,y):
-		spyral.Sprite.__init__(self,scene)
-		self.image = spyral.Image(filename= "game/colors/burger.png")
-		self.x = x
-		self.y = y
-class flower(spyral.Sprite):
-	def __init__(self,scene,x,y):
-		spyral.Sprite.__init__(self,scene)
-		self.image = spyral.Image(filename= "game/colors/flower.png")
-		self.x = x
-		self.y = y
 
 class Question(spyral.Scene):
     def __init__(self, *args, **kwargs):
@@ -102,14 +53,55 @@ class Question(spyral.Scene):
         	self.background = spyral.Image(filename= "game/colors/purpleb3.png")
         elif game.Color==5:
         	self.background = spyral.Image(filename= "game/colors/redb3.png")
-       	spyral.event.register('input.keyboard.down.space', self.go_Next) 
+ '''       
+	class selectDifficultyForm(spyral.Form) 
+		easy = spyral.widgets.Button("easy", "Easy")
+		medium = spyral.widgets.Button("medium", "Medium")
+		hard = spyral.widgets.Button("Hard", "Hard")
+		if easy = "down":
+			easyquestion = random.randrange(question1_array[0], question1_array[9])
+			#easyrand = random.getstate()
+			easysubject = random.randrange(subject1_array[easyrand, easyrand]
+			easyverb = random.randrange(verb1_array[easyrand, easyrand]
+			easynumber = random.randrange(number1_array[easyrand, easyrand]
+			message4 = font.render(easyquestion);
+			message5 = sont.render(easysubject);
+			message6 = sont.render(easyverb);
+			message7 = sont.render(easynumber);
+		
+			elif medium = "down":
+			
+			mediumquestion = random.randrange(question2_array[0], question2_array[9])
+			#mediumrand = random.getstate() 
+			mediumsubject = random.randrange(subject2_array[mediumrand, mediumrand]
+			mediumverb = random.randrange(verb2_array[mediumrand, mediumrand]
+			mediumnumber = random.randrange(number2_array[mediumrand, mediumrand]
+			message4 = font.render(mediumquestion);
+			message5 = sont.render(mediumsubject);
+			message6 = sont.render(mediumverb);
+			message7 = sont.render(mediumnumber);
+			
+			elif hard = "down":
+        
+			hardquestion = random.randrange(question3_array[0], question3_array[9])
+			#hardrand = random.getstate()
+			hardquestion = random.randrange(subject3_array[hardrand, hardrand]
+			hardquestion = random.randrange(verb3_array[hardrand, hardrand]
+			hardquestion = random.randrange(number3_array[hardrand, hardrand]
+			message4 = font.render(hardquestion);
+			message5 = sont.render(hardsubject);
+			message6 = sont.render(hardverb);
+			message7 = sont.render(hardnumber);
+			
+		#message4 = font.render(question_array[0]);
+		#message5 =sont.render(subject_array[0]);
+		#message6 = sont.render(verb_array[0]);
+		#message7 = sont.render(number_array[0]);
+'''
 	spyral.event.register("input.mouse.down.left", self.handle_clicked) 
 	spyral.event.register("system.quit", spyral.director.pop)
 	spyral.event.register("input.keyboard.down.q", spyral.director.pop)
  	font = spyral.Font("/usr/share/fonts/truetype/freefont/FreeMono.ttf",36,(255,255,255))
-
-
-
 	question_array = ["The cat ___ the bird around the room.", "John is ___ to school.", "You are ___ right now.", "Lions ___ after their prey.",
 	"Can I ___ to your house?", "People ___ when they are sad.", "An iPhone ___ a cellphone.", "The player ___ the basketball.",
 	"Beyonce ___ on stage with Jay Z.", "We will ___ in class because it is fun.",
@@ -185,10 +177,19 @@ class Question(spyral.Scene):
 	"How many nouns are there A. 0 B. 3 C. 1", "How many nouns are there A. 2 B. 1 C. 6"]
 	#2, 1, 0, 0, 1, 2, 0, 1, 1, 1
 
-
-
-
-	global x_array
+#Possible hint: A noun is a person, place, or thing, while a proper noun is the more specific name of a person, place, or thing. 
+'''
+	verb1_answer_array = ["chased", "walking", "sitting", "run", "come", "cry", "is", "shot", "danced", "learn"]
+	verb2_answer_array = ["watched", "writing", "brought", "caught", "talking", "drew", "waking", "swear", "are", "left"]
+	verb3_answer_array = ["bled", "skipped", "threw", "showering", "forgave", "is", "think", "go", "having", "take"]
+	number1_answer_array = ["3", "2", "0", "2", "1", "1", "2", "2", "3", "1"]
+	number2_answer_array = ["2", "1", "2", "1", "1", "2", "0", "2", "2", "2"]
+	number3_answer_array = ["1", "1", "3", "3", "1", "2", "1", "1", "3", "1"]
+	subject1_answer_array = ["cat", "John", "you", "lions", "I", "people", "iPhone", "player", "Beyonce", "we"]
+	subject2_answer_array = ["I", "paper", "I", "he", "you", "student", "waking", "The Eagles", "students", "Anthony"]
+	subject3_answer_array = ["he", "he", "quarterback", "Dorothy", "he", "broccoli", "place", "you", "Sunday", "I"]
+'''
+global x_array
 	x_array = [0, 0, 1, 2, 0, 2, 1, 1, 1, 0,
 	0, 0, 1, 1, 0, 1, 0, 1, 2, 2,
 	1, 2, 0, 1, 1, 2, 1, 0, 2, 0]
@@ -199,422 +200,241 @@ class Question(spyral.Scene):
 	global z_array
 	z_array = [2, 1, 0, 1, 0, 0, 1, 2, 2, 1,
 	0, 2, 1, 2, 1, 1, 1, 2, 1, 1,
-	2, 1, 0, 0, 1, 2, 0, 1, 1, 1]
-	
-	global rnd
-	rnd = random.randint(0,30)
-	sont = spyral.Font("/usr/share/fonts/truetype/freefont/FreeMono.ttf",20,(255,255,255))
-	#message4 = font.render(str(game.Balls));	
-	message4 = sont.render(question_array[rnd]);
-	message5 =sont.render(subject_array[rnd]);
-	message6 = sont.render(verb_array[rnd]);
-	message7 = sont.render(number_array[rnd]);
+	2, 1, 0, 0, 1, 2, 0, 1, 1, 1]	
+	sont = spyral.Font("/usr/share/fonts/truetype/freefont/FreeMono.ttf",30,(50,50,60))
+	#message4 = font.render(question_array[0]);
+	#message5 =sont.render(subject_array[0]);
+	#message6 = sont.render(verb_array[0]);
+	#message7 = sont.render(number_array[0]);
+#	self.diff_form = selectDifficultyForm(self)
+#	self.diff_form.focus()
+
 	questionMessage(self,message4,(0),10)
-	questionMessage(self,message5,(0),150)
-	questionMessage(self,message6,(0),200)	
-	questionMessage(self,message7,(0),250)
+	questionMessage(self,message5,(0),575)
+	questionMessage(self,message6,(0),625)	
+	questionMessage(self,message7,(0),670)
 	message = font.render("");
 	message1 = font.render("2.");
 	message2 = font.render("1.");
 	message3 = font.render("3.");
-	message10 = font.render("a.");
-	message11 = font.render("b.");
-	message12 = font.render("c.");
-	questionMessage(self,message10, 220, 360) 
-	questionMessage(self,message11, 570, 360) 
-	questionMessage(self,message12, 920, 360) 
 	self.q1 = questionMessage(self,message,(0),10)
-	self.q2 = questionMessage(self,message1,(10),550)
-	self.q3 = questionMessage(self,message2,(10),400)
-	self.q4 = questionMessage(self,message3,(10),700)
-	
-	game.NumAnsw = 0
+	self.q2 = questionMessage(self,message1,(10),310)
+	self.q3 = questionMessage(self,message2,(10),200)
+	self.q4 = questionMessage(self,message3,(10),450)
+	self.h1 = Horline(self, 0,250)
+	self.h2 = Horline(self, 0,400)
+	self.h3 = Horline(self, 0,555)
+	self.v3 = Vertline(self, 350, 350)
+	self.v1 = Vertline(self, 750, 350)
 	self.c1 = Check(self,-10,-100)
 	self.x1 = X(self,-10,-100)
 	self.c2 = Check(self,-10,-100)
 	self.x2 = X(self,-10,-100)
 	self.c3 = Check(self,-10,-100)
 	self.x3 = X(self,-10,-100)
-	if game.Pic == 0:
-        	self.b1 = One(self,200,390)
-		self.b2 = One(self,200,540)
-		self.b3 = One (self,200, 690)
-		self.b4 = One(self,550, 390)
-		self.b5 = One(self,550,540)
-		self.b6 = One(self,550,690)
-		self.b7 = One(self,900,390)
-		self.b8 = One(self,900,540)
-		self.b9 = One(self,900,690)
-	
-	if game.Pic == 1:
-        	self.b1 = hat(self,200,390)
-		self.b2 = hat(self,200,540)
-		self.b3 = hat (self,200, 690)
-		self.b4 = hat(self,550, 390)
-		self.b5 = hat(self,550,540)
-		self.b6 = hat(self,550,690)
-		self.b7 = hat(self,900,390)
-		self.b8 = hat(self,900,540)
-		self.b9 = hat(self,900,690)
-	if game.Pic == 4:
-        	self.b1 = sheep(self,200,390)
-		self.b2 = sheep(self,200,540)
-		self.b3 = sheep (self,200, 690)
-		self.b4 = sheep(self,550, 390)
-		self.b5 = sheep(self,550,540)
-		self.b6 = sheep(self,550,690)
-		self.b7 = sheep(self,900,390)
-		self.b8 = sheep(self,900,540)
-		self.b9 = sheep(self,900,690)
-	if game.Pic == 3:
-        	self.b1 = phone(self,200,390)
-		self.b2 = phone(self,200,540)
-		self.b3 = phone (self,200, 690)
-		self.b4 = phone(self,550, 390)
-		self.b5 = phone(self,550,540)
-		self.b6 = phone(self,550,690)
-		self.b7 = phone(self,900,390)
-		self.b8 = phone(self,900,540)
-		self.b9 = phone(self,900,690)
-	if game.Pic == 5:
-        	self.b1 = ball8(self,200,390)
-		self.b2 = ball8(self,200,540)
-		self.b3 = ball8 (self,200, 690)
-		self.b4 = ball8(self,550, 390)
-		self.b5 = ball8(self,550,540)
-		self.b6 = ball8(self,550,690)
-		self.b7 = ball8(self,900,390)
-		self.b8 = ball8(self,900,540)
-		self.b9 = ball8(self,900,690)
-	if game.Pic == 2:
-        	self.b1 = burger(self,200,390)
-		self.b2 = burger(self,200,540)
-		self.b3 = burger (self,200, 690)
-		self.b4 = burger(self,550, 390)
-		self.b5 = burger(self,550,540)
-		self.b6 = burger(self,550,690)
-		self.b7 = burger(self,900,390)
-		self.b8 = burger(self,900,540)
-		self.b9 = burger(self,900,690)
-	if game.Pic == 6:
-        	self.b1 = flower(self,200,390)
-		self.b2 = flower(self,200,540)
-		self.b3 = flower (self,200, 690)
-		self.b4 = flower(self,550, 390)
-		self.b5 = flower(self,550,540)
-		self.b6 = flower(self,550,690)
-		self.b7 = flower(self,900,390)
-		self.b8 = flower(self,900,540)
-		self.b9 = flower(self,900,690)
-	
 	m2 = font.render(str(game.Counter))
-	self.s1=questionMessage(self,m2,(940),35)
+	questionMessage(self,m2,(960),20)
 	m3 = font.render(str(game.Counter1))
-	self.s2 =questionMessage(self,m3,(1140),35)	
-	self.font1 = spyral.Font("/usr/share/fonts/truetype/freefont/FreeMono.ttf",36,(255,255,255))
+	questionMessage(self,m3,(1150),20)	
+
 	print game.Balls 
-	
-	self.n1 = 0
-	self.n2 = 0
 	#self.c1 = Check(self,500,500)
 	#message3 = font.render(counter);
 	#self.c1 = questionMessage(self,message3,(1100),10)
-    def go_Next(self):
-	if game.NumAnsw == 3:
-
-		spyral.director.pop
-		#spyral.director.replace(pong.Pong())		
-		spyral.director.replace(basketball2.BasketBall2())
-		#spyral.director.replace(question.Question())
     def handle_clicked(self, pos):
 	global x_array
 	global z_array
 	global y_array
-	
-	if x_array[rnd] == 0 and self.c1.x<0:
-		if pos.x < 350 and pos.y < 525:
-			self.c1.x = 250
-			self.c1.y = 400 
+	if pos.y>700:
+		spyral.director.replace(basketball2.BasketBall2())
+	if x_array[0] == 1 and self.c1.x<0:
+		if pos.x < 350 and pos.y < 250:
+			self.c1.x = 160
+			self.c1.y = 195 
 			game.Balls = game.Balls +1
 			print game.Balls 
 			game.Counter = game.Counter +1
-			self.s1.kill()
-			q = self.font1.render(str(game.Counter))
-			self.s1=questionMessage(self,q,(940),35)
-			game.NumAnsw = game.NumAnsw +1
-		elif pos.x< 750 and pos.x >350 and pos.y<525:
-			self.x1.x = 570
-			self.x1.y = 450
-			self.c1.x = 250
-			self.c1.y = 400
+		elif pos.x< 750 and pos.x >350 and pos.y<250:
+			self.x1.x = 550
+			self.x1.y = 195
+			self.c1.x = 165
+			self.c1.y = 200
 			game.Counter1 = game.Counter1 +1
-			self.s2.kill()
-			q = self.font1.render(str(game.Counter1))
-			self.s2=questionMessage(self,q,(1140),35)
-			game.NumAnsw = game.NumAnsw +1
-		elif pos.x> 750 and pos.y<525:
-			self.x1.x = 960
-			self.x1.y = 450
-			self.c1.x = 250
-			self.c1.y = 400
+		elif pos.x> 750 and pos.y<250:
+			self.x1.x = 1000
+			self.x1.y = 195
+			self.c1.x = 165
+			self.c1.y = 200
 			game.Counter1 = game.Counter1 +1
-			self.s2.kill()
-			q = self.font1.render(str(game.Counter1))
-			self.s2=questionMessage(self,q,(1140),35)
-			game.NumAnsw = game.NumAnsw +1
-	elif x_array[rnd] == 1 and self.c1.x<0:
-		if pos.x < 350 and pos.y < 525:
-			self.x1.x = 250
-			self.x1.y = 450 
-			self.c1.x = 570
-			self.c1.y = 400
+	elif x_array[0] == 2 and self.c1.x<0:
+		if pos.x < 350 and pos.y < 250:
+			self.x1.x = 160
+			self.x1.y = 195 
+			self.c1.x = 550
+			self.c1.y = 195
 			game.Counter1 = game.Counter1 +1
-			self.s2.kill()
-			q = self.font1.render(str(game.Counter1))
-			self.s2=questionMessage(self,q,(1140),35)
-			game.NumAnsw = game.NumAnsw +1
-		elif pos.x< 750 and pos.x >350 and pos.y<525:
-			self.c1.x = 570
-			self.c1.y = 400
+		elif pos.x< 750 and pos.x >350 and pos.y<250:
+			self.c1.x = 550
+			self.c1.y = 195
 			game.Balls = game.Balls +1
 			print game.Balls 
 			game.Counter = game.Counter +1
-			self.s1.kill()
-			q = self.font1.render(str(game.Counter))
-			self.s1=questionMessage(self,q,(940),35)
-			game.NumAnsw = game.NumAnsw +1
-	
-		elif pos.x> 750 and pos.y<525:
-			self.x1.x = 960
-			self.x1.y = 450
-			self.c1.x = 570
-			self.c1.y = 400
+		elif pos.x> 750 and pos.y<250:
+			self.x1.x = 1000
+			self.x1.y = 195
+			self.c1.x = 550
+			self.c1.y = 195
 			game.Counter1 = game.Counter1 +1
-			self.s2.kill()
-			q = self.font1.render(str(game.Counter1))
-			self.s2=questionMessage(self,q,(1140),35)
-			game.NumAnsw = game.NumAnsw +1
-	elif x_array[rnd] == 2 and self.c1.x<0:
-		if pos.x < 350 and pos.y < 525:
-			self.x1.x = 250
-			self.x1.y = 450 
-			self.c1.x = 980 
-			self.c1.y = 400
+	elif x_array[0] == 3 and self.c1.x<0:
+		if pos.x < 350 and pos.y < 250:
+			self.x1.x = 160
+			self.x1.y = 195 
+			self.c1.x = 1000 
+			self.c1.y = 195
 			game.Counter1 = game.Counter1 +1
-			self.s2.kill()
-			q = self.font1.render(str(game.Counter1))
-			self.s2=questionMessage(self,q,(1140),35)
-			game.NumAnsw = game.NumAnsw +1
-		elif pos.x< 750 and pos.x >350 and pos.y<525:
-			self.x1.x = 570
-			self.x1.y = 450
-			self.c1.x = 980
-			self.c1.y = 400
+		elif pos.x< 750 and pos.x >350 and pos.y<250:
+			self.x1.x = 550
+			self.x1.y = 195
+			self.c1.x = 1000
+			self.c1.y = 195
 			game.Counter1 = game.Counter1 +1
-			self.s2.kill()
-			q = self.font1.render(str(game.Counter1))
-			self.s2=questionMessage(self,q,(1140),35)
-			game.NumAnsw = game.NumAnsw +1
-		elif pos.x> 750 and pos.y<525:
-			self.c1.x = 980
-			self.c1.y = 400
+		elif pos.x> 750 and pos.y<250:
+			self.c1.x = 1000
+			self.c1.y = 195
 			game.Balls = game.Balls + 1
 			print game.Balls 
 			game.Counter = game.Counter +1
-			self.s1.kill()
-			q = self.font1.render(str(game.Counter))
-			self.s1=questionMessage(self,q,(940),35)
-			game.NumAnsw = game.NumAnsw +1
 
 		
-	if y_array[rnd] == 0 and self.c2.x<0:
-		if pos.x < 350 and pos.y > 525 and pos.y< 675:
-			self.c2.x = 250
-			self.c2.y = 550
+	if y_array[0] == 1 and self.c2.x<0:
+		if pos.x < 350 and pos.y > 250 and pos.y< 400:
+			self.c2.x = 160
+			self.c2.y = 350 
 			game.Balls = game.Balls +1
 			print game.Balls 
 			game.Counter = game.Counter +1
-			self.s1.kill()
-			q = self.font1.render(str(game.Counter))
-			self.s1=questionMessage(self,q,(940),35)
-			game.NumAnsw = game.NumAnsw +1
-		elif pos.x< 750 and pos.x >350 and pos.y>525 and pos.y< 675:
+		elif pos.x< 750 and pos.x >350 and pos.y>250 and pos.y< 400:
 			self.x2.x = 550
-			self.x2.y = 600
-			self.c2.x = 250
-			self.c2.y = 550
+			self.x2.y = 350
+			self.c2.x = 165
+			self.c2.y = 350
 			game.Counter1 = game.Counter1 +1
-			self.s2.kill()
-			q = self.font1.render(str(game.Counter1))
-			self.s2=questionMessage(self,q,(1140),35)
-			game.NumAnsw = game.NumAnsw +1
-		elif pos.x> 750 and pos.y>525 and pos.y< 675:
-			self.x2.x = 960
-			self.x2.y = 600
-			self.c2.x = 250
-			self.c2.y = 550
-			game.Counter1 = game.Counter1 +1
-			self.s2.kill()
-			q = self.font1.render(str(game.Counter1))
-			self.s2=questionMessage(self,q,(1140),35)
-			game.NumAnsw = game.NumAnsw +1
-	elif y_array[rnd] == 1 and self.c2.x<0:
-		if pos.x < 350 and pos.y > 525 and pos.y< 675:
-			self.x2.x = 250
-			self.x2.y = 600 
-			self.c2.x = 570
-			self.c2.y = 550
-			game.Counter1 = game.Counter1 +1
-			self.s2.kill()
-			q = self.font1.render(str(game.Counter1))
-			self.s2=questionMessage(self,q,(1140),35)
-			game.NumAnsw = game.NumAnsw +1
-		elif pos.x< 750 and pos.x >350 and pos.y>525 and pos.y< 675:
-			self.c2.x = 570
-			self.c2.y = 550
-			game.Balls = game.Balls +1
-			print game.Balls 
-			game.Counter = game.Counter +1
-			self.s1.kill()
-			q = self.font1.render(str(game.Counter))
-			self.s1=questionMessage(self,q,(940),35)
-			game.NumAnsw = game.NumAnsw +1
-		elif pos.x> 750 and pos.y>525 and pos.y< 675:
+		elif pos.x> 750 and pos.y>250 and pos.y< 400:
 			self.x2.x = 1000
-			self.x2.y = 600
-			self.c2.x = 570
-			self.c2.y = 550
+			self.x2.y = 350
+			self.c2.x = 165
+			self.c2.y = 350
 			game.Counter1 = game.Counter1 +1
-			self.s2.kill()
-			q = self.font1.render(str(game.Counter1))
-			self.s2=questionMessage(self,q,(1140),35)
-			game.NumAnsw = game.NumAnsw +1
-	elif y_array[rnd] == 2 and self.c2.x<0:
-		if pos.x < 350 and pos.y > 525 and pos.y< 675:
-			self.x2.x = 250
-			self.x2.y = 600 
-			self.c2.x = 960 
-			self.c2.y = 550
+	elif y_array[0] == 2 and self.c2.x<0:
+		if pos.x < 350 and pos.y > 250 and pos.y< 400:
+			self.x2.x = 160
+			self.x2.y = 350 
+			self.c2.x = 550
+			self.c2.y = 350
 			game.Counter1 = game.Counter1 +1
-			self.s2.kill()
-			q = self.font1.render(str(game.Counter1))
-			self.s2=questionMessage(self,q,(1140),35)
-			game.NumAnsw = game.NumAnsw +1
-		elif pos.x< 750 and pos.x >350 and pos.y>525 and pos.y< 675:
-			self.x2.x = 570
-			self.x2.y = 600
-			self.c2.x = 960
-			self.c2.y = 550
+		elif pos.x< 750 and pos.x >350 and pos.y>250 and pos.y< 400:
+			self.c2.x = 550
+			self.c2.y = 350
+			game.Balls = game.Balls +1
+			print game.Balls 
+			game.Counter = game.Counter +1
+		elif pos.x> 750 and pos.y>250 and pos.y< 400:
+			self.x2.x = 1000
+			self.x2.y = 350
+			self.c2.x = 550
+			self.c2.y = 350
 			game.Counter1 = game.Counter1 +1
-			self.s2.kill()
-			q = self.font1.render(str(game.Counter1))
-			self.s2=questionMessage(self,q,(1140),35)
-			game.NumAnsw = game.NumAnsw +1
-		elif pos.x> 750 and pos.y>525 and pos.y< 675:
-			self.c2.x = 960
-			self.c2.y = 550
+	elif y_array[0] == 3 and self.c2.x<0:
+		if pos.x < 350 and pos.y > 250 and pos.y< 400:
+			self.x2.x = 160
+			self.x2.y = 350 
+			self.c2.x = 1000 
+			self.c2.y = 350
+			game.Counter1 = game.Counter1 +1
+		elif pos.x< 750 and pos.x >350 and pos.y>250 and pos.y< 400:
+			self.x2.x = 550
+			self.x2.y = 350
+			self.c2.x = 1000
+			self.c2.y = 350
+			game.Counter1 = game.Counter1 +1
+		elif pos.x> 750 and pos.y>250 and pos.y< 400:
+			self.c2.x = 1000
+			self.c2.y = 350
 			game.Balls = game.Balls + 1
 			print game.Balls 
 			game.Counter = game.Counter +1
-			self.s1.kill()
-			q = self.font1.render(str(game.Counter))
-			self.s1=questionMessage(self,q,(940),35)
-			game.NumAnsw = game.NumAnsw +1
 			
-	if z_array[rnd] == 0 and self.c3.x<0:
-		if pos.x < 350 and pos.y > 675:
-			self.c3.x = 250
-			self.c3.y = 700 
+	if z_array[0] == 1 and self.c3.x<0:
+		if pos.x < 350 and pos.y > 400:
+			self.c3.x = 160
+			self.c3.y = 500 
 			game.Balls = game.Balls +1
 			print game.Balls 
 			game.Counter = game.Counter +1
-			self.s1.kill()
-			q = self.font1.render(str(game.Counter))
-			self.s1=questionMessage(self,q,(940),35)
-			game.NumAnsw = game.NumAnsw +1
-		elif pos.x< 750 and pos.x >350 and pos.y>675:
-			self.x3.x = 570
-			self.x3.y = 750
-			self.c3.x = 250
-			self.c3.y = 700
+		elif pos.x< 750 and pos.x >350 and pos.y>400:
+			self.x3.x = 550
+			self.x3.y = 500
+			self.c3.x = 165
+			self.c3.y = 500
 			game.Counter1 = game.Counter1 +1
-			self.s2.kill()
-			q = self.font1.render(str(game.Counter1))
-			self.s2=questionMessage(self,q,(1140),35)
-			game.NumAnsw = game.NumAnsw +1
-		elif pos.x> 750 and pos.y>675:
-			self.x3.x = 960
-			self.x3.y = 750
-			self.c3.x = 250
-			self.c3.y = 700
+		elif pos.x> 750 and pos.y>400:
+			self.x3.x = 1000
+			self.x3.y = 195
+			self.c3.x = 165
+			self.c3.y = 200
 			game.Counter1 = game.Counter1 +1
-			self.s2.kill()
-			q = self.font1.render(str(game.Counter1))
-			self.s2=questionMessage(self,q,(1140),35)
-			game.NumAnsw = game.NumAnsw +1
-	elif z_array[rnd] == 1 and self.c3.x<0:
-		if pos.x < 350 and pos.y > 675:
-			self.x3.x = 250
-			self.x3.y = 750 
-			self.c3.x = 570
-			self.c3.y = 700
+	elif z_array[0] == 2 and self.c3.x<0:
+		if pos.x < 350 and pos.y > 400:
+			self.x3.x = 160
+			self.x3.y = 500 
+			self.c3.x = 550
+			self.c3.y = 500
 			game.Counter1 = game.Counter1 +1
-			self.s2.kill()
-			q = self.font1.render(str(game.Counter1))
-			self.s2=questionMessage(self,q,(1140),35)
-			game.NumAnsw = game.NumAnsw +1
-		elif pos.x< 750 and pos.x >350 and pos.y>675:
-			self.c3.x = 570
-			self.c3.y = 700
+		elif pos.x< 750 and pos.x >350 and pos.y>400:
+			self.c3.x = 550
+			self.c3.y = 500
 			game.Balls = game.Balls +1
 			print game.Balls 
 			game.Counter = game.Counter +1
-			self.s1.kill()
-			q = self.font1.render(str(game.Counter))
-			self.s1=questionMessage(self,q,(940),35)
-			game.NumAnsw = game.NumAnsw +1
-		elif pos.x> 750 and pos.y>675:
-			self.x3.x = 960
-			self.x3.y = 750
-			self.c3.x = 570
-			self.c3.y = 700
+		elif pos.x> 750 and pos.y>400:
+			self.x3.x = 1000
+			self.x3.y = 500
+			self.c3.x = 550
+			self.c3.y = 500
 			game.Counter1 = game.Counter1 +1
-			self.s2.kill()
-			q = self.font1.render(str(game.Counter1))
-			self.s2=questionMessage(self,q,(1140),35)
-			game.NumAnsw = game.NumAnsw +1
-	elif z_array[rnd] == 2 and self.c3.x<0:
-		if pos.x < 350 and pos.y > 675:
-			self.x3.x = 250
-			self.x3.y = 750 
-			self.c3.x = 960 
-			self.c3.y = 700
+	elif z_array[0] == 3 and self.c3.x<0:
+		if pos.x < 350 and pos.y > 400:
+			self.x3.x = 160
+			self.x3.y = 500 
+			self.c3.x = 1000 
+			self.c3.y = 500
 			game.Counter1 = game.Counter1 +1
-			self.s2.kill()
-			q = self.font1.render(str(game.Counter1))
-			self.s2=questionMessage(self,q,(1140),35)
-			game.NumAnsw = game.NumAnsw +1
-		elif pos.x< 750 and pos.x >350 and pos.y>675:
-			self.x3.x = 570
-			self.x3.y = 750
-			self.c3.x = 960
-			self.c3.y = 700
+		elif pos.x< 750 and pos.x >350 and pos.y>400:
+			self.x3.x = 550
+			self.x3.y = 500
+			self.c3.x = 1000
+			self.c3.y = 500
 			game.Counter1 = game.Counter1 +1
-			self.s2.kill()
-			q = self.font1.render(str(game.Counter1))
-			self.s2=questionMessage(self,q,(1140),35)
-			game.NumAnsw = game.NumAnsw +1
-		elif pos.x> 750 and pos.y>675:
-			self.c3.x = 960
-			self.c3.y = 700
+		elif pos.x> 750 and pos.y>400:
+			self.c3.x = 1000
+			self.c3.y = 500
 			game.Balls = game.Balls + 1
 			print game.Balls 
 			game.Counter = game.Counter +1
-			self.s1.kill()
-			q = self.font1.render(str(game.Counter))
-			self.s1=questionMessage(self,q,(940),35)
-			game.NumAnsw = game.NumAnsw +1
-	
+'''
+		if pos.x > 
+		if pos.x <400 and pos.y>300:
+			#self.b1.kill()
+			self.ball1.kill()
+		elif pos.x>800 and pos.y>300:
+			#self.b3.kill()
+			self.ball3.kill()
+		elif pos.x >400 and pos.x <800 and pos.y>300:
+			Game.counter = Game.counter +1			
+			spyral.director.push(test.Test())
+			spyral.director.pop()
+	elif x_array[0] == 800:
+'''	
 #class checl(spyral.Sprite):
 #	def __init__(self,scene,img,x,y):
 	
@@ -624,5 +444,19 @@ class questionMessage(spyral.Sprite):
 		self.image = img
 		self.x = x
 		self.y = y
-
+class Vertline(spyral.Sprite):
+    def __init__(self, scene, x, y):
+        spyral.Sprite.__init__(self, scene)
+        self.image = spyral.Image(size=(10, 400)).fill((255, 255, 255))
+	self.anchor = 'midleft'
+	self.x = x
+	self.y = y
+	
+class Horline(spyral.Sprite):
+    def __init__(self, scene,x, y):
+        spyral.Sprite.__init__(self, scene)
+        self.image = spyral.Image(size=(1200, 10)).fill((255, 255, 255))
+	self.anchor = 'midleft'
+	self.x = x
+	self.y = y
 	
